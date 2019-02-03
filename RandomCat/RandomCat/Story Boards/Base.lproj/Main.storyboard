@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kNi-R9-crG">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Random Cat Images-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RandomCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="questionMark" translatesAutoresizingMaskIntoConstraints="NO" id="HeC-Sw-kVT">
+                                <rect key="frame" x="20" y="164" width="374" height="386"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="386" id="7JE-0S-xgh"/>
+                                </constraints>
+                            </imageView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gk0-Uo-K00">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                                <color key="color" red="0.91371303800000003" green="0.33930072189999999" blue="0.24700140949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="w1A-cX-tJL">
+                                <rect key="frame" x="20" y="590" width="374" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciC-be-d64">
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="30"/>
+                                        <color key="backgroundColor" red="0.91371303800000003" green="0.33930072189999999" blue="0.24700140949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Get Cat Image">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getCatButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eDm-AJ-WLA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nSc-uf-Lbt">
+                                        <rect key="frame" x="192" y="0.0" width="182" height="30"/>
+                                        <color key="backgroundColor" red="0.91371303800000003" green="0.33930072189999999" blue="0.24700140949999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Show Saved Images">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="pRB-i5-0QE" kind="show" id="SPG-id-pdk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.93636234865515444" blue="0.99202605686366219" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="gk0-Uo-K00" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3bF-0f-LTi"/>
+                            <constraint firstItem="w1A-cX-tJL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="GAc-iI-t86"/>
+                            <constraint firstItem="HeC-Sw-kVT" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="RDV-bd-HNN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w1A-cX-tJL" secondAttribute="trailing" constant="20" id="RZa-tQ-Bcy"/>
+                            <constraint firstItem="w1A-cX-tJL" firstAttribute="top" secondItem="HeC-Sw-kVT" secondAttribute="bottom" constant="40" id="SiK-mU-n2l"/>
+                            <constraint firstItem="gk0-Uo-K00" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bQs-XI-azb"/>
+                            <constraint firstItem="HeC-Sw-kVT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="iGq-Si-OQX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HeC-Sw-kVT" secondAttribute="trailing" constant="20" id="we3-Xw-Btq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Random Cat Images" id="2ct-m1-JO4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="KE0-0f-kds">
+                            <connections>
+                                <action selector="saveBarButtonPressed:" destination="BYZ-38-t0r" id="InH-27-KoH"/>
+                                <segue destination="pRB-i5-0QE" kind="show" identifier="toTableVC" id="xeo-M2-w3a"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="activityIndicator" destination="gk0-Uo-K00" id="j3y-Qz-5XW"/>
+                        <outlet property="catImageView" destination="HeC-Sw-kVT" id="BkK-wH-5fl"/>
+                        <outlet property="getCatButton" destination="ciC-be-d64" id="hFy-mV-G7o"/>
+                        <outlet property="showSavedImages" destination="nSc-uf-Lbt" id="0we-m0-Izy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1727.536231884058" y="132.58928571428572"/>
+        </scene>
+        <!--Saved Cat Images-->
+        <scene sceneID="Rrg-NF-W3i">
+            <objects>
+                <tableViewController id="pRB-i5-0QE" customClass="SavedCatImagesTableViewController" customModule="RandomCat" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="yyq-6Q-PuX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="savedCatCell" rowHeight="260" id="GHj-hy-tsb" customClass="SavedCatImagesTableViewCell" customModule="RandomCat" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="260"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="GHj-hy-tsb" id="LWD-ht-Xdh">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="259.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rSt-Zd-Y7r">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="249.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="249.5" id="Rof-UW-FRd"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rSt-Zd-Y7r" firstAttribute="top" secondItem="LWD-ht-Xdh" secondAttribute="top" id="31N-p0-cxh"/>
+                                        <constraint firstAttribute="trailing" secondItem="rSt-Zd-Y7r" secondAttribute="trailing" id="OHo-ba-4No"/>
+                                        <constraint firstItem="rSt-Zd-Y7r" firstAttribute="leading" secondItem="LWD-ht-Xdh" secondAttribute="leading" id="ZXc-mE-s7x"/>
+                                        <constraint firstAttribute="bottom" secondItem="rSt-Zd-Y7r" secondAttribute="bottom" constant="5" id="gmZ-OF-ccA"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="catImageView" destination="rSt-Zd-Y7r" id="QV9-Fs-IJp"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pRB-i5-0QE" id="6NR-IU-G0a"/>
+                            <outlet property="delegate" destination="pRB-i5-0QE" id="Rfh-FP-Pba"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Saved Cat Images" id="shL-yX-H90"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NPh-a7-d23" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2404" y="133"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="9Hx-KZ-HsB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kNi-R9-crG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="icons8-home" selectedImage="icons8-home_filled" id="K6D-oL-IAf">
+                        <inset key="imageInsets" minX="1" minY="1" maxX="-1" maxY="-1"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="vcJ-Tk-350">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="yIP-Bx-pIM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUV-ir-TQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="132.58928571428572"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icons8-home" width="75" height="75"/>
+        <image name="icons8-home_filled" width="75" height="75"/>
+        <image name="questionMark" width="324" height="292.32000732421875"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="SPG-id-pdk"/>
+    </inferredMetricsTieBreakers>
+</document>
